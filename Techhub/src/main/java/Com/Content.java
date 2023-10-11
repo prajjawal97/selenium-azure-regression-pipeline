@@ -16,9 +16,9 @@ import org.apache.poi.ss.usermodel.*;
 public class Content {
     public Content() {
     }
-    private static final int FIRSTNAME = 0;
-    private static final int LASTNAME = 1;
-    private static final int EMAIL_ID_INDEX = 2;
+    private static final int FNAME = 0;
+    private static final int LNAME = 1;
+    private static final int EMAIL = 2;
     private static final int GENDER_INDEX = 3;
     private static final int NUMBER_INDEX = 4;
     private static final int DATE_INDEX = 5;
@@ -49,11 +49,11 @@ public class Content {
                     if (cellIndex == 0) {
                         // for taking the description from sheet we fetch all data Column wise
                         if (cell.getStringCellValue().equalsIgnoreCase("FirstName")) {
-                            testCaseIndex.add(FIRSTNAME, i);
+                            testCaseIndex.add(FNAME, i);
                         } else if (cell.getStringCellValue().equalsIgnoreCase("LastName")) {
-                            testCaseIndex.add(LASTNAME, i);
+                            testCaseIndex.add(LNAME, i);
                         } else if (cell.getStringCellValue().equalsIgnoreCase("Email")) {
-                            testCaseIndex.add(EMAIL_ID_INDEX, i);
+                            testCaseIndex.add(EMAIL, i);
                         } else if (cell.getStringCellValue().equalsIgnoreCase("Gender")) {
                             testCaseIndex.add(GENDER_INDEX, i);
                         } else if (cell.getStringCellValue().equalsIgnoreCase("Number")) {
@@ -70,11 +70,11 @@ public class Content {
                         if(!excludelist.contains(i)){
                             cell.setCellType(Cell.CELL_TYPE_STRING);
                         }
-                        if (testCaseIndex.get(FIRSTNAME) == i ) {
+                        if (testCaseIndex.get(FNAME) == i ) {
                             testcase.setFirstname(cell.getStringCellValue());
-                        } else if (testCaseIndex.get(LASTNAME) == i ) {
+                        } else if (testCaseIndex.get(LNAME) == i ) {
                             testcase.setLastname(cell.getStringCellValue());
-                        } else if (testCaseIndex.get(EMAIL_ID_INDEX) == i ) {
+                        } else if (testCaseIndex.get(EMAIL) == i ) {
                             testcase.setEmailId(cell.getStringCellValue());
                         } else if (testCaseIndex.get(GENDER_INDEX) == i ) {
                             testcase.setGender(cell.getStringCellValue());
